@@ -64,6 +64,7 @@ const PRODUCTS = [
   { id: 10, title: "Sword Art Online",          price: 49  },
   { id: 11, title: "Dragon Ball Z — Goku",      price: 49  },
   { id: 12, title: "Death Note — Light",        price: 49  },
+  { id: 13, title: "Life - Akhlaq",             price: 99 },
 ];
 
 /* prettier poster images keyed by id */
@@ -80,6 +81,7 @@ const POSTER_URLS = {
   10: "https://upload.wikimedia.org/wikipedia/en/thumb/b/b6/Sword_Art_Online_anime_logo.png/220px-Sword_Art_Online_anime_logo.png",
   11: "https://upload.wikimedia.org/wikipedia/en/a/a7/Dbz_logo.png",
   12: "https://upload.wikimedia.org/wikipedia/en/4/4c/Death_Note_anime_poster.jpg",
+  13: "#",
 };
 
 const PLACEHOLDER_EMOJI = ["⛩️","🗡️","⚡","🔥","💫","🌊","⚔️","🌸","🏯","🎋","🐉","📓"];
@@ -281,7 +283,7 @@ function Navbar({ dark, setDark }) {
           fontSize:   "0.58rem", fontWeight: 600,
           color:      t.textSub, letterSpacing: "0.15em",
           paddingBottom: 2,
-        }}>OFFICIAL STORE</span>
+        }}>POSTERS STORE</span>
       </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
@@ -380,13 +382,6 @@ function HeroBanner() {
         }} />
       ))}
 
-      <p style={{
-        fontFamily: "'Cinzel', serif", fontWeight: 700,
-        fontSize: "0.68rem", letterSpacing: "0.22em",
-        color: t.accent, marginBottom: 14,
-        textTransform: "uppercase",
-      }}>✦ Official Merchandise</p>
-
       <h1 style={{
         fontFamily: "'Cinzel', serif", fontWeight: 900,
         fontSize:   "clamp(2rem, 5vw, 3.4rem)",
@@ -407,7 +402,7 @@ function HeroBanner() {
         letterSpacing: "0.04em",
         lineHeight: 1.8,
       }}>
-        Premium art prints · Pan-India delivery · Easy returns
+        Premium art prints | Premium anime posters
       </p>
 
       {/* stats row */}
@@ -737,7 +732,7 @@ export default function App() {
         {/* Footer */}
         <footer style={{ background: t.surface, borderTop: `1px solid ${t.border}`, padding: "28px clamp(18px,5vw,64px)", textAlign: "center" }}>
           <p style={{ color: t.textSub, fontSize: "0.65rem", letterSpacing: "0.12em" }}>
-            ⛩️ &nbsp;ANIMART OFFICIAL STORE &nbsp;·&nbsp; Premium Anime Merchandise &nbsp;·&nbsp; Made with ♥ in India
+            ⛩️ &nbsp;ANIMART &nbsp;·&nbsp; Premium Anime Posters &nbsp;·&nbsp; Made with ♥ in India
           </p>
         </footer>
 
