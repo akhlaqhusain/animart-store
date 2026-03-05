@@ -21,8 +21,8 @@ export default function CartDrawer() {
 
   // Build a WhatsApp message pre-filled with cart contents
   const buildWhatsAppMsg = () => {
-    const lines = cart.map(i => `• ${i.title} x${i.qty} — ₹${(i.price * i.qty).toLocaleString()}`).join("\n");
-    const msg   = `Hi! I'd like to place an order:\n\n${lines}\n\nSubtotal: ₹${subtotal.toLocaleString()}\nDelivery: ₹${DELIVERY}\nTotal: ₹${total.toLocaleString()}`;
+    const lines = cart.map(i => `• ID : ${i.id} ${i.title} x${i.qty} — ₹${(i.price * i.qty).toLocaleString()}`).join("\n");
+    const msg   = `Hi! I'd like to place an order:\n\n${lines}\n\nSubtotal: ₹${subtotal.toLocaleString()}\nDelivery: ₹${DELIVERY}\nTotal: ₹${total.toLocaleString()}\n\n`;
     return `https://wa.me/${CONTACT_NUMBER.replace(/\D/g, "")}?text=${encodeURIComponent(msg)}`;
   };
 
