@@ -10,12 +10,6 @@ import { ThemeCtx } from "./theme.js";
 export default function HeroBanner() {
   const t = useContext(ThemeCtx);
 
-  const stats = [
-    ["12+", "Titles"],
-    ["₹49", "Delivery"],
-    ["5★",  "Rated"],
-  ];
-
   const blobs = [
     { size: 320, top: -100, right: -60, left: undefined, bottom: undefined, opacity: 0.07 },
     { size: 180, top: undefined, right: undefined, bottom: -60, left: 80,   opacity: 0.05 },
@@ -26,9 +20,9 @@ export default function HeroBanner() {
       padding:      "56px clamp(18px, 5vw, 64px) 48px",
       background:   t.surface,
       borderBottom: `1px solid ${t.border}`,
-      boxShadow: "2px -6px 12px 6px",
       position:     "relative",
       overflow:     "hidden",
+      boxShadow: "2px -6px 12px 6px",
       transition:   "background 0.3s",
     }}>
 
@@ -62,10 +56,29 @@ export default function HeroBanner() {
         marginBottom:  16,
         letterSpacing: "0.02em",
       }}>
-        Bring Your<br />
-        <span style={{ color: t.accent }}>Favourite Anime</span><br />
-        To Life
+        Posters For Every<br />
+        <span style={{ color: t.accent }}>Passion You Love</span>
       </h1>
+
+      {/* Category chips */}
+      <div style={{ display: "flex", gap: 10, marginBottom: 16, flexWrap: "wrap" }}>
+        {[["⛩️", "Anime", "#e8a838"], ["🏎️", "Cars", "#e05c3a"]].map(([icon, lbl, col]) => (
+          <span key={lbl} style={{
+            display:       "inline-flex",
+            alignItems:    "center",
+            gap:           5,
+            background:    `${col}18`,
+            border:        `1px solid ${col}44`,
+            borderRadius:  20,
+            padding:       "4px 12px",
+            fontFamily:    "'Cinzel', serif",
+            fontSize:      "0.68rem",
+            fontWeight:    600,
+            color:         col,
+            letterSpacing: "0.06em",
+          }}>{icon} {lbl}</span>
+        ))}
+      </div>
 
       {/* Tagline */}
       <p style={{
@@ -85,7 +98,7 @@ export default function HeroBanner() {
         marginTop: 32,
         flexWrap:  "wrap",
       }}>
-        {stats.map(([num, label]) => (
+        {[["30+", "Posters"], ["₹49", "Delivery"], ["5★", "Rated"]].map(([num, label]) => (
           <div key={label}>
             <p style={{
               fontFamily: "'Cinzel', serif",

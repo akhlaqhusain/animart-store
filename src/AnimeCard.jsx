@@ -78,7 +78,6 @@ export default function AnimeCard({ title, price, id, image }) {
       style={{
         background:    t.surface,
         border:        `2px solid ${hovered ? t.accent : t.border}`,
-        // border:         `1.5px solid ${t.accent}`,
         borderRadius:  16,
         overflow:      "hidden",
         display:       "flex",
@@ -147,21 +146,6 @@ export default function AnimeCard({ title, price, id, image }) {
           pointerEvents: "none",
         }} />
 
-        {/* Price badge */}
-        <div style={{
-          position:      "absolute",
-          top:           10,
-          right:         10,
-          background:    t.btnBg,
-          color:         t.btnText,
-          fontFamily:    "'Cinzel', serif",
-          fontWeight:    700,
-          fontSize:      "0.72rem",
-          padding:       "3px 9px",
-          borderRadius:  20,
-          boxShadow:     "0 2px 8px rgba(0,0,0,0.25)",
-          letterSpacing: "0.03em",
-        }}>₹{price.toLocaleString()}</div>
       </div>
 
       {/* ── Info & controls ───────────────────────────────────── */}
@@ -172,16 +156,28 @@ export default function AnimeCard({ title, price, id, image }) {
         gap:           10,
         flex:          1,
       }}>
-        {/* Title */}
-        <p style={{
-          fontFamily:    "'Cinzel', serif",
-          fontWeight:    600,
-          fontSize:      "0.82rem",
-          color:         t.text,
-          margin:        0,
-          lineHeight:    1.45,
-          letterSpacing: "0.01em",
-        }}>{title}</p>
+        {/* Title + price on same row */}
+        <div style={{ display: "flex", alignItems: "flex-start", justifyContent: "space-between", gap: 8 }}>
+          <p style={{
+            fontFamily:    "'Cinzel', serif",
+            fontWeight:    600,
+            fontSize:      "0.82rem",
+            color:         t.text,
+            margin:        0,
+            lineHeight:    1.45,
+            letterSpacing: "0.01em",
+            flex:          1,
+          }}>{title}</p>
+          <span style={{
+            fontFamily:    "'Cinzel', serif",
+            fontWeight:    800,
+            fontSize:      "0.82rem",
+            color:         t.accent,
+            whiteSpace:    "nowrap",
+            letterSpacing: "0.02em",
+            paddingTop:    "1px",
+          }}>₹{price.toLocaleString()}</span>
+        </div>
 
         {/* Decorative divider */}
         <div style={{
