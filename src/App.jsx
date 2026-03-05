@@ -31,18 +31,17 @@ const ps = 59;
 */
 const PRODUCTS = [
   { id: 1,  title: "Demon Slayer — Tanjiro",   price: ps,  image: "https://rukminim2.flixcart.com/image/480/640/xif0q/poster/u/i/3/extra-large-tanjiro-manga-collage-poster-set-2-set-of-20-210-mm-original-imahyf6vhfasuqdm.jpeg?q=90" },
-  { id: 11, title: "Dragon Ball Z — Goku",      price: ps,  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6lL7nYucG8R0VEpg5B7pSq01HNNx8fFBVkg&s" },
-  { id: 6,  title: "One Piece — Luffy",         price: ps,  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcjxz5Wr0S4nAsKEYQlFzs15tuySji2G4mFw&s" },
   { id: 3,  title: "Jujutsu Kaisen — Gojo",     price: ps, image: "https://m.media-amazon.com/images/I/81t1DH7jH+L._AC_UF894,1000_QL80_.jpg" },
   { id: 12, title: "Death Note — Light",        price: ps,  image: "https://m.media-amazon.com/images/I/71AEjh0+uLL.jpg" },
-  { id: 5,  title: "Naruto — Uzumaki",          price: ps,  image: "https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg" },
-  { id: 2,  title: "Attack on Titan",           price: ps,  image: "https://m.media-amazon.com/images/I/61P3m77rasL._AC_UF894,1000_QL80_.jpg" },
-  { id: 7,  title: "Fullmetal Alchemist",       price: ps,  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX87McCyyko0nxifSP-jEhp8Q7gG1DTeI4dA&s" },
-  { id: 8,  title: "Tokyo Revengers",           price: ps,  image: "https://posterwa.com/cdn/shop/files/TOKYORVGR6.jpg?v=1686080272" },
   { id: 9,  title: "Bleach — Ichigo",           price: ps,  image: "https://m.media-amazon.com/images/I/910YGzAMjQL._AC_UF1000,1000_QL80_.jpg" },
+  { id: 8,  title: "Tokyo Revengers",           price: ps,  image: "https://posterwa.com/cdn/shop/files/TOKYORVGR6.jpg?v=1686080272" },
+  { id: 2,  title: "Attack on Titan",           price: ps,  image: "https://m.media-amazon.com/images/I/61P3m77rasL._AC_UF894,1000_QL80_.jpg" },
   { id: 10, title: "Sword Art Online",          price: ps,  image: "https://m.media-amazon.com/images/I/61pGPe8woIL._AC_UF1000,1000_QL80_.jpg" },
-  
+  { id: 7,  title: "Fullmetal Alchemist",       price: ps,  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQX87McCyyko0nxifSP-jEhp8Q7gG1DTeI4dA&s" },
+  { id: 5,  title: "Naruto — Uzumaki",          price: ps,  image: "https://upload.wikimedia.org/wikipedia/en/9/94/NarutoCoverTankobon1.jpg" },
   { id: 4,  title: "My Hero Academia",          price: ps,  image: "https://m.media-amazon.com/images/I/710kXqplBrL._AC_UF350,350_QL50_.jpg" },
+  { id: 11, title: "Dragon Ball Z — Goku",      price: ps,  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6lL7nYucG8R0VEpg5B7pSq01HNNx8fFBVkg&s" },
+  { id: 6,  title: "One Piece — Luffy",         price: ps,  image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcjxz5Wr0S4nAsKEYQlFzs15tuySji2G4mFw&s" },
 ];
 
 export default function App() {
