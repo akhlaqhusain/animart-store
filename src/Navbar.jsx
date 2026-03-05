@@ -131,13 +131,20 @@ export default function Navbar({ dark, setDark }) {
           height:         60,
         }}>
 
-          {/* Logo */}
-          <div style={{
-            display:    "flex",
-            alignItems: "center",
-            gap:        8,
-            flexShrink: 0,
-          }}>
+          {/* Logo — click scrolls back to top */}
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            style={{
+              display:    "flex",
+              alignItems: "center",
+              gap:        8,
+              flexShrink: 0,
+              background: "none",
+              border:     "none",
+              padding:    0,
+              cursor:     "pointer",
+            }}
+          >
             <span style={{ fontSize: "1.3rem", lineHeight: 1 }}>⛩️</span>
             <span style={{
               fontFamily:    "'Cinzel', serif",
@@ -146,7 +153,7 @@ export default function Navbar({ dark, setDark }) {
               color:         t.accent,
               letterSpacing: "0.06em",
             }}>ANIMART</span>
-          </div>
+          </button>
 
           {/* ── Centre: section links (desktop) ─────────────── */}
           <div className="nb-links" style={{ gap: 0 }}>
