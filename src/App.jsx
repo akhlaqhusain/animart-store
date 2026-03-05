@@ -249,8 +249,8 @@ export default function App() {
           textAlign:   "center",
           transition:  "background 0.3s",
         }}>
-          <p style={{ color: t.textSub, fontSize: "0.65rem", letterSpacing: "0.12em" }}>
-            ⛩️ &nbsp;ANIMART OFFICIAL STORE &nbsp;·&nbsp; Anime · Cars · Cartoons &nbsp;·&nbsp; Made with ♥ in India
+          <p style={{ color: t.textSub, fontSize: "0.75rem", letterSpacing: "0.12em" }}>
+            ⛩️ &nbsp;ANIMART POSTERS STORE &nbsp;·&nbsp; Anime · Cars &nbsp;·&nbsp; Made with ♥ in India
           </p>
         </footer>
 

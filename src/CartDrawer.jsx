@@ -24,10 +24,11 @@ export default function CartDrawer() {
     clearCart,
   } = useContext(CartCtx);
 
-  const [step,   setStep]  = useState("cart");
-  const [addr,   setAddr]  = useState({ name: "", phone: "", street: "", city: "", state: "", pincode: "" });
-  const [upiId,  setUpiId] = useState("");
-  const [paying, setPay]   = useState(false);
+  const [step,      setStep]     = useState("cart");
+  const [addr,      setAddr]     = useState({ name: "", phone: "", street: "", city: "", state: "", pincode: "" });
+  const [upiId,     setUpiId]    = useState("");
+  const [paying,    setPay]      = useState(false);
+  const [paidTotal, setPaidTotal] = useState(0); // snapshot before cart is cleared
 
   const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
   const total    = subtotal > 0 ? subtotal + DELIVERY : 0;
@@ -36,10 +37,12 @@ export default function CartDrawer() {
   const addrOk   = addr.name && addr.phone && addr.street && addr.city && addr.pincode;
 
   const handlePay = () => {
+    const finalTotal = subtotal + DELIVERY; // capture before clearCart zeroes it
     setPay(true);
     setTimeout(() => {
       setPay(false);
-      clearCart();          // ← empties cart after payment
+      setPaidTotal(finalTotal); // store snapshot
+      clearCart();
       setStep("success");
     }, 2400);
   };
@@ -217,7 +220,7 @@ export default function CartDrawer() {
                 marginTop:    4,
               }}>
                 <p style={{ color: t.accent, fontWeight: 700, margin: 0, fontSize: "0.9rem" }}>
-                  Total Paid: ₹{total.toLocaleString()}
+                  Total Paid: ₹{paidTotal.toLocaleString()}
                 </p>
               </div>
               <button
