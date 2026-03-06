@@ -21,7 +21,7 @@ export default function CartDrawer() {
 
   // Build a Telegram link pre-filled with cart contents
   const buildTelegramLink = () => {
-    const lines = cart.map(i => `• ${i.title} x${i.qty} — ₹${(i.price * i.qty).toLocaleString()}`).join("\n");
+    const lines = cart.map(i => `• ID:${i.id} ${i.title} x${i.qty} — ₹${(i.price * i.qty).toLocaleString()}`).join("\n");
     const msg   = `Hi! I'd like to place an order:\n\n${lines}\n\nSubtotal: ₹${subtotal.toLocaleString()}\nDelivery: ₹${DELIVERY}\nTotal: ₹${total.toLocaleString()}`;
     return `https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(msg)}`;
   };
