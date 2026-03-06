@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ThemeCtx, CartCtx, DELIVERY } from "./theme.js";
 
-const CONTACT_NUMBER = "+916202473645"; // WhatsApp / call number
+const TELEGRAM_USERNAME = "AnimartStore"; // Telegram username
 
 export default function CartDrawer() {
   const t = useContext(ThemeCtx);
@@ -19,11 +19,11 @@ export default function CartDrawer() {
 
   const handleClose = () => setCartOpen(false);
 
-  // Build a WhatsApp message pre-filled with cart contents
-  const buildWhatsAppMsg = () => {
-    const lines = cart.map(i => `• ID : ${i.id} ${i.title} x${i.qty} — ₹${(i.price * i.qty).toLocaleString()}`).join("\n");
-    const msg   = `Hi! I'd like to place an order:\n\n${lines}\n\nSubtotal: ₹${subtotal.toLocaleString()}\nDelivery: ₹${DELIVERY}\nTotal: ₹${total.toLocaleString()}\n\n`;
-    return `https://wa.me/${CONTACT_NUMBER.replace(/\D/g, "")}?text=${encodeURIComponent(msg)}`;
+  // Build a Telegram link pre-filled with cart contents
+  const buildTelegramLink = () => {
+    const lines = cart.map(i => `• ${i.title} x${i.qty} — ₹${(i.price * i.qty).toLocaleString()}`).join("\n");
+    const msg   = `Hi! I'd like to place an order:\n\n${lines}\n\nSubtotal: ₹${subtotal.toLocaleString()}\nDelivery: ₹${DELIVERY}\nTotal: ₹${total.toLocaleString()}`;
+    return `https://t.me/${TELEGRAM_USERNAME}?text=${encodeURIComponent(msg)}`;
   };
 
   if (!cartOpen) return null;
@@ -213,10 +213,10 @@ export default function CartDrawer() {
                   lineHeight:    1.7,
                   margin:        0,
                 }}>
-                  Contact us on WhatsApp or call with your cart details and we'll confirm your order.
+                  Message us on Telegram with your cart and we'll confirm your order.
                 </p>
 
-                {/* Phone number display */}
+                {/* Telegram handle display */}
                 <div style={{
                   background:    t.accentSoft,
                   border:        `1px solid ${t.accent}55`,
@@ -227,19 +227,19 @@ export default function CartDrawer() {
                   justifyContent:"center",
                   gap:           8,
                 }}>
-                  <span style={{ fontSize: "1.1rem" }}>📞</span>
+                  <span style={{ fontSize: "1.1rem" }}>✈️</span>
                   <span style={{
                     color:         t.accent,
                     fontFamily:    "'Cinzel', serif",
                     fontWeight:    800,
                     fontSize:      "1rem",
-                    letterSpacing: "0.06em",
-                  }}>+91 62024 73645</span>
+                    letterSpacing: "0.04em",
+                  }}>t.me/AnimartStore</span>
                 </div>
 
-                {/* WhatsApp button — pre-fills cart as message */}
+                {/* Telegram button — pre-fills cart as message */}
                 <a
-                  href={buildWhatsAppMsg()}
+                  href={buildTelegramLink()}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
@@ -247,7 +247,7 @@ export default function CartDrawer() {
                     alignItems:     "center",
                     justifyContent: "center",
                     gap:            8,
-                    background:     "#25D366",
+                    background:     "#229ED9",
                     color:          "#fff",
                     border:         "none",
                     borderRadius:   9,
@@ -260,21 +260,9 @@ export default function CartDrawer() {
                     textDecoration: "none",
                   }}
                 >
-                  <span style={{ fontSize: "1rem" }}>💬</span>
-                  ORDER VIA WHATSAPP
+                  <span style={{ fontSize: "1rem" }}>✈️</span>
+                  ORDER VIA TELEGRAM
                 </a>
-
-                {/* Plain call link */}
-                <a
-                  href={`tel:${CONTACT_NUMBER}`}
-                  style={{
-                    color:         t.textSub,
-                    fontFamily:    "'Cinzel', serif",
-                    fontSize:      "0.65rem",
-                    letterSpacing: "0.08em",
-                    textDecoration:"none",
-                  }}
-                >or tap to call</a>
               </div>
 
             </div>

@@ -98,7 +98,7 @@ export default function HeroBanner() {
         marginTop: 32,
         flexWrap:  "wrap",
       }}>
-        {[["30+", "Posters"], ["₹49", "Delivery"], ["5★", "Rated"]].map(([num, label]) => (
+        {[["40+", "Posters"], ["₹49", "Delivery"], ["5★", "Rated"]].map(([num, label]) => (
           <div key={label}>
             <p style={{
               fontFamily: "'Cinzel', serif",

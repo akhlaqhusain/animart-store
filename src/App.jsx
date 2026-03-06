@@ -83,7 +83,11 @@ const CATALOGUE = [
       { id: 22, title: "Demon Slayer",    price: poster_price, image: AnimeImg("22.jpeg")      },
       { id: 23, title: "Jujutsu Kaisen",    price: poster_price, image: AnimeImg("23.jpeg")      },
       { id: 24, title: "One Piece",    price: poster_price, image: AnimeImg("24.jpeg")      },
-      
+      { id: 25, title: "Demon Slayer",    price: poster_price, image: AnimeImg("25.jpeg")      },
+      { id: 26, title: "Naruto: Shippuden",    price: poster_price, image: AnimeImg("26.jpeg")      },
+      { id: 27, title: "cristiano ronaldo",    price: poster_price, image: AnimeImg("27.jpeg")      },
+      { id: 28, title: "Spider-Man",    price: poster_price, image: AnimeImg("28.jpeg")      },
+      { id: 29, title: "One Piece",    price: poster_price, image: AnimeImg("29.jpeg")      },
     ],
   },
   {
@@ -100,6 +104,12 @@ const CATALOGUE = [
       { id: 6, title: "feel it!!",    price: car_price, image: CarImg("6.jpeg")      },
       { id: 7, title: "feel it!!",    price: car_price, image: CarImg("7.jpeg")      },
       { id: 8, title: "feel it!!",    price: car_price, image: CarImg("8.jpeg")      },
+      { id: 9, title: "feel it!!",    price: car_price, image: CarImg("9.jpeg")      },
+      { id: 10, title: "feel it!!",    price: car_price, image: CarImg("10.jpeg")      },
+      { id: 11, title: "feel it!!",    price: car_price, image: CarImg("11.jpeg")      },
+      { id: 12, title: "feel it!!",    price: car_price, image: CarImg("12.jpeg")      },
+      { id: 13, title: "feel it!!",    price: car_price, image: CarImg("13.jpeg")      },
+      { id: 14, title: "feel it!!",    price: car_price, image: CarImg("14.jpeg")      },
     ],
   },
 ];
@@ -152,7 +162,7 @@ function SectionHeader({ emoji, label, color, count, t }) {
 
 /* ── Root App ────────────────────────────────────────────────── */
 export default function App() {
-  const [dark,     setDark]     = useState(false);
+  const [dark,     setDark]     = useState(true);
   const [cart,     setCart]     = useState([]);
   const [cartOpen, setCartOpen] = useState(false);
 
